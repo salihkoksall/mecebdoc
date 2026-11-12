@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MEÇEB · İş akışı tasarımı</title>
+<link rel="stylesheet" href="wf.css">
+</head>
+<body>
+<div class="note">Wireframe · akış tablo/form ile düzenlenir, diyagram tanımdan otomatik çizilir (salt okunur) · adımlar örnektir (AS-08) · <a href="index.html">dizin</a></div>
+<div class="shell">
+    <nav class="side">
+        <div class="brand">MEÇEB</div>
+        <a href="01-dashboard.html">Ana sayfa</a>
+        <div class="group">TANIMLAR</div>
+        <a href="10-sistem-yonetimi.html">Belge türleri</a>
+        <a href="#">Formlar</a>
+        <a class="on" href="06-is-akisi-tasarim.html">İş akışları</a>
+        <a href="#">Şablonlar</a>
+        <a href="#">Ücret tarifesi</a>
+        <a href="#">Bildirim kuralları</a>
+        <div class="group">SİSTEM</div>
+        <a href="#">Birimler</a>
+        <a href="#">Kullanıcılar ve roller</a>
+        <a href="#">Entegrasyonlar</a>
+    </nav>
+    <div class="main">
+        <div class="top">
+            <h1>Çevre yetkilendirme standart akışı</h1>
+            <span class="badge warn">v4 · taslak</span><span class="badge">yayında: v3 · 14 aktif başvuru</span>
+            <span class="grow"></span>
+            <span class="btn">Doğrula</span><span class="btn">Sürümleri karşılaştır</span><span class="btn pri">Yayınla</span>
+        </div>
+        <div class="content">
+            <div class="card mb">
+                <h2>Önizleme</h2>
+                <div class="flow">
+                    <span class="node">Ön koşul</span><span class="arrow">→</span>
+                    <span class="node">Ödeme</span><span class="arrow">→</span>
+                    <span class="node">Ön inceleme</span><span class="arrow">→</span>
+                    <span class="node on">Uzman değerlendirmesi</span><span class="arrow">→</span>
+                    <span class="node">Şube müdürü onayı</span><span class="arrow">→</span>
+                    <span class="node">Belge üretimi</span><span class="arrow">→</span>
+                    <span class="node">Tamamlandı</span>
+                </div>
+                <p class="small muted mt">Geri dönüşler: Uzman değerlendirmesi ⇄ Eksiklik bekleniyor · Şube müdürü onayı → Uzman değerlendirmesi (iade) · Ret</p>
+            </div>
+            <div class="grid g12">
+                <div class="card">
+                    <div class="row sp"><h2>Adımlar</h2><span class="btn sm">+ Adım</span></div>
+                    <table>
+                        <tr><th>#</th><th>Adım</th><th>Tür</th><th>Rol</th></tr>
+                        <tr><td>1</td><td>Ön koşul</td><td>Otomatik</td><td>—</td></tr>
+                        <tr><td>2</td><td>Ödeme</td><td>Ödeme</td><td>Başvuran</td></tr>
+                        <tr><td>3</td><td>Ön inceleme</td><td>İnceleme</td><td>Uzman</td></tr>
+                        <tr class="sel"><td>4</td><td>Uzman değerlendirmesi</td><td>İnceleme</td><td>Uzman</td></tr>
+                        <tr><td>5</td><td>Eksiklik bekleniyor</td><td>Başvuran işlemi</td><td>Başvuran</td></tr>
+                        <tr><td>6</td><td>Şube müdürü onayı</td><td>Onay</td><td>Şube Müdürü</td></tr>
+                        <tr><td>7</td><td>Belge üretimi</td><td>Belge düzenleme</td><td>—</td></tr>
+                    </table>
+                    <p class="small muted mt">Yayın öncesi doğrulama: ulaşılamayan adım, çıkışı olmayan adım, rolü boş adım, atama kuralı eksik adım.</p>
+                </div>
+                <div class="card">
+                    <h2>Adım: Uzman değerlendirmesi</h2>
+                    <div class="tabs"><span class="on">Genel</span><span>Geçişler (3)</span><span>Bildirimler</span></div>
+                    <div class="grid g2">
+                        <div class="field"><label>Adım adı</label><div class="in">Uzman değerlendirmesi</div></div>
+                        <div class="field"><label>İşlem türü</label><div class="in">İnceleme ▾</div></div>
+                        <div class="field"><label>Sorumlu rol</label><div class="in">Uzman ▾</div></div>
+                        <div class="field"><label>Sorumlu birim kuralı</label><div class="in">Belgeyi veren birim ▾</div></div>
+                        <div class="field"><label>Atama yöntemi</label><div class="in">Birim havuzu (üstlenme) ▾</div></div>
+                        <div class="field"><label>Paralel değerlendirme</label><div class="in">Tek görev ▾</div></div>
+                        <div class="field"><label>İşlem süresi (SLA)</label><div class="in">5 iş günü</div></div>
+                        <div class="field"><label>Gecikmede</label><div class="in">Personele ve birim amirine bildir ▾</div></div>
+                        <div class="field"><label>Başvurana görünen durum</label><div class="in">Değerlendiriliyor ▾</div></div>
+                    </div>
+                    <h2 class="mt">Geçişler</h2>
+                    <table>
+                        <tr><th>Eylem</th><th>Koşul</th><th>Sonraki adım</th><th>Açıklama</th><th>Dosya</th></tr>
+                        <tr><td>Uygun görüş</td><td>—</td><td>Şube müdürü onayı</td><td>İsteğe bağlı</td><td>—</td></tr>
+                        <tr><td>Eksiklik bildir</td><td>Eksiklik turu &lt; 2</td><td>Eksiklik bekleniyor</td><td><b>Zorunlu</b></td><td>—</td></tr>
+                        <tr><td>Uygun değil</td><td>—</td><td>Ret</td><td><b>Zorunlu</b></td><td>İsteğe bağlı</td></tr>
+                    </table>
+                    <div class="row mt"><span class="btn sm">+ Geçiş</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

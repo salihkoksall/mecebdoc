@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MEÇEB · Ana dashboard</title>
+<link rel="stylesheet" href="wf.css">
+</head>
+<body>
+<div class="note">Wireframe · tüm sayılar örnektir · <a href="index.html">dizin</a></div>
+<div class="shell">
+    <nav class="side">
+        <div class="brand">MEÇEB</div>
+        <a class="on" href="01-dashboard.html">Ana sayfa</a>
+        <div class="group">İŞLERİM</div>
+        <a href="07-degerlendirme.html">İş listem</a>
+        <a href="#">Birim başvuruları</a>
+        <div class="group">BELGELER</div>
+        <a href="09-belge-yonetimi.html">Belge yönetimi</a>
+        <a href="#">Raporlar</a>
+        <div class="group">YÖNETİM</div>
+        <a href="10-sistem-yonetimi.html">Belge türleri</a>
+        <a href="06-is-akisi-tasarim.html">İş akışları</a>
+    </nav>
+    <div class="main">
+        <div class="top">
+            <h1>Ana sayfa</h1><span class="grow"></span>
+            <span class="in">Birim: Çevre Yetkilendirme Şubesi ▾</span>
+            <span class="in">Son 30 gün ▾</span>
+            <span class="muted">A. Yılmaz · Uzman</span>
+        </div>
+        <div class="content">
+            <p class="muted small mb">Tüm göstergeler kullanıcının birim ve belge türü kapsamıyla sınırlıdır.</p>
+            <div class="grid g4">
+                <div class="card kpi"><div class="v">12</div><div class="l">Bana atanan iş</div></div>
+                <div class="card kpi"><div class="v">3</div><div class="l">Süresi geçen iş</div></div>
+                <div class="card kpi"><div class="v">148</div><div class="l">Toplam başvuru</div></div>
+                <div class="card kpi"><div class="v">6,4 gün</div><div class="l">Ortalama sonuçlanma</div></div>
+            </div>
+            <div class="grid g4 mt">
+                <div class="card kpi"><div class="v">412</div><div class="l">Aktif belge</div></div>
+                <div class="card kpi"><div class="v">27</div><div class="l">Süresi yaklaşan (90 gün)</div></div>
+                <div class="card kpi"><div class="v">9</div><div class="l">Süresi dolmuş</div></div>
+                <div class="card kpi"><div class="v">5</div><div class="l">Reddedilen</div></div>
+            </div>
+            <div class="grid g21 mt">
+                <div class="card">
+                    <div class="row sp"><h2>Bekleyen işlerim</h2><a class="small" href="07-degerlendirme.html">Tümü</a></div>
+                    <div class="tablewrap"><table>
+                        <tr><th>Başvuru no</th><th>Belge türü</th><th>Başvuran</th><th>Adım</th><th>Kalan süre</th></tr>
+                        <tr><td><a href="07-degerlendirme.html">CY-2026-000148</a></td><td>Araç takip servis sağlayıcı yeterlik</td><td>Örnek Bilişim A.Ş.</td><td>Uzman değerlendirmesi</td><td><span class="badge bad">1 gün gecikti</span></td></tr>
+                        <tr><td><a href="#">CY-2026-000151</a></td><td>Deniz yeterlilik</td><td>Örnek Denizcilik Ltd.</td><td>Ön inceleme</td><td><span class="badge warn">1 gün</span></td></tr>
+                        <tr><td><a href="#">CY-2026-000153</a></td><td>Toprak kirliliği kontrolü yeterlilik</td><td>Örnek Çevre Lab.</td><td>Uzman değerlendirmesi</td><td><span class="badge">4 gün</span></td></tr>
+                    </table></div>
+                </div>
+                <div class="card">
+                    <h2>Belge türüne göre başvuru</h2>
+                    <p class="small">Araç takip servis sağlayıcı · 62</p><div class="bar mb"><i style="width:62%"></i></div>
+                    <p class="small">Toprak kirliliği kontrolü · 51</p><div class="bar mb"><i style="width:51%"></i></div>
+                    <p class="small">Deniz yeterlilik · 35</p><div class="bar"><i style="width:35%"></i></div>
+                </div>
+            </div>
+            <div class="grid g2 mt">
+                <div class="card">
+                    <h2>Birim iş yükü</h2>
+                    <table>
+                        <tr><th>Personel</th><th>Açık iş</th><th>Geciken</th></tr>
+                        <tr><td>A. Yılmaz</td><td>12</td><td>3</td></tr>
+                        <tr><td>B. Demir</td><td>9</td><td>0</td></tr>
+                        <tr><td>Havuz (atanmamış)</td><td>4</td><td>1</td></tr>
+                    </table>
+                </div>
+                <div class="card">
+                    <h2>Süresi yaklaşan belgeler</h2>
+                    <table>
+                        <tr><th>Belge no</th><th>Sahibi</th><th>Bitiş</th></tr>
+                        <tr><td><a href="08-belge-detay.html">CY-B-2021-0031</a></td><td>Örnek Bilişim A.Ş.</td><td><span class="badge warn">18 gün</span></td></tr>
+                        <tr><td><a href="#">CY-B-2022-0007</a></td><td>Örnek Denizcilik Ltd.</td><td><span class="badge">74 gün</span></td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>MEÇEB Mimari Özeti</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap">
+<style>
+/* Yerleşim: tek sütunlu yönetici özeti; sol kenarda bölüm adı, sağda içerik; tablolar kendi kaydırma kabında. */
+:root {
+    --bg: #f5f7f6; --surface: #ffffff; --fg: #17211e; --muted: #5a6a65; --line: #d9e0dd;
+    --accent: #0b6b57; --accent-soft: #e0f0eb;
+    --warn: #8a4b06; --warn-soft: #fbefd9; --bad: #9a2323; --bad-soft: #fbe6e6;
+    --display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+    --body: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --bg: #111715; --surface: #19211f; --fg: #e6ecea; --muted: #9aaaa5; --line: #2c3835;
+        --accent: #5cc9ae; --accent-soft: #17332c;
+        --warn: #f0b765; --warn-soft: #3a2a12; --bad: #f09a9a; --bad-soft: #3b1c1c;
+        color-scheme: dark;
+    }
+}
+:root[data-theme="dark"] {
+    --bg: #111715; --surface: #19211f; --fg: #e6ecea; --muted: #9aaaa5; --line: #2c3835;
+    --accent: #5cc9ae; --accent-soft: #17332c;
+    --warn: #f0b765; --warn-soft: #3a2a12; --bad: #f09a9a; --bad-soft: #3b1c1c;
+    color-scheme: dark;
+}
+body { background: var(--bg); color: var(--fg); font: 15px/1.6 var(--body); }
+.wrap { max-width: 1040px; margin: 0 auto; padding-block: 40px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: flex; flex-direction: column; gap: 40px; }
+header h1 { font: 600 34px/1.15 var(--display); margin: 0 0 10px; text-wrap: balance; }
+header p { margin: 0; color: var(--muted); max-width: 68ch; }
+.meta { font-size: 13px; color: var(--muted); margin-top: 12px; }
+section { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 24px; border-top: 1px solid var(--line); padding-top: 24px; }
+section > h2 { font: 600 17px/1.3 var(--display); margin: 0; color: var(--accent); text-wrap: balance; }
+.body { min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+.body p { margin: 0; max-width: 70ch; }
+.body ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; max-width: 72ch; }
+.alert { background: var(--bad-soft); color: var(--bad); border: 1px solid var(--bad); border-radius: 8px; padding: 14px 16px; }
+.alert strong { font-weight: 600; }
+.alert p { color: var(--fg); margin-top: 6px; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.fact { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+.fact b { display: block; font: 600 22px/1.2 var(--display); font-variant-numeric: tabular-nums; }
+.fact span { font-size: 13px; color: var(--muted); }
+.scroll { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th { text-align: left; font-weight: 600; color: var(--muted); padding: 9px 12px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td { padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+.tag { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; white-space: nowrap; background: var(--accent-soft); color: var(--accent); }
+.tag.w { background: var(--warn-soft); color: var(--warn); }
+.tag.b { background: var(--bad-soft); color: var(--bad); }
+.diagram { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px; }
+.diagram pre { margin: 0; }
+.phases { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.phase { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px; }
+.phase h3 { font: 600 14px/1.3 var(--display); margin: 0 0 6px; }
+.phase p { font-size: 13.5px; color: var(--muted); }
+.small { font-size: 13px; color: var(--muted); }
+code { font-size: 12.5px; background: var(--accent-soft); color: var(--accent); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+@media (max-width: 720px) { section { grid-template-columns: 1fr; gap: 12px; } header h1 { font-size: 27px; } }
+</style>
+
+<div class="wrap">
+<header>
+    <h1>MEÇEB sistem analizi ve hedef mimari</h1>
+    <p>Bakanlığın farklı uygulamalarda yürüyen belge, izin, lisans ve yeterlik süreçlerini tek platformda toplayacak sistemin mevcut durum analizi, mimari önerisi ve geliştirme yolu. Bu sayfa özettir; ayrıntı repodaki <code>docs/meceb/</code> klasöründedir.</p>
+    <p class="meta">12.11.2026 · Tasarım önerisi, kod değişikliği içermez · Kritik kararlar onay bekliyor</p>
+</header>
+
+<section>
+    <h2>Önce bunlar</h2>
+    <div class="body">
+        <div class="alert">
+            <strong>Depoda gizli anahtarlar var.</strong>
+            <p><code>appsettings.Test.json</code> git'te izleniyor; veritabanı şifresi, JWT anahtarı, şifreleme anahtarı ve UÇBS servis bilgileri içeriyor. Staging ortamı bu dosyayı kullanıyor. Değerler sızmış sayılıp değiştirilmeli.</p>
+        </div>
+        <ul>
+            <li>Rol ve yetki servisleri, kullanıcının kendinde olmayan yetkiyi bir role eklemesini engellemiyor. Pilot öncesi kapatılmalı.</li>
+            <li>Pilot belgelerin e-imza gereksinimi ve onay süreci Excel'de "Soralım". Form alanları ve ekler hiçbir kaynakta yok.</li>
+            <li>Belgenet, Döner Sermaye ve UÇBS veri servislerinin teknik sözleşmeleri henüz bilinmiyor.</li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <h2>Eldeki framework</h2>
+    <div class="body">
+        <div class="facts">
+            <div class="fact"><b>.NET 9</b><span>CSB 11 paketleri, klasik katmanlı</span></div>
+            <div class="fact"><b>PostgreSQL</b><span>EF Core 9, migration + seed</span></div>
+            <div class="fact"><b>Angular 21</b><span>Material, Tailwind, @csb bileşenleri</span></div>
+            <div class="fact"><b>UÇBS SSO</b><span>hazır, JWT üretiyor</span></div>
+        </div>
+        <div class="scroll"><table>
+            <tr><th>Yetenek</th><th>Durum</th><th>Not</th></tr>
+            <tr><td>Kimlik, rol, yetki, menü</td><td><span class="tag">Hazır</span></td><td>Statik yetki adları; veri kapsamı yok</td></tr>
+            <tr><td>Liste sorgulama, denetim kaydı</td><td><span class="tag">Hazır</span></td><td>Güvenli filtreleme altyapısı mevcut</td></tr>
+            <tr><td>Arka plan işi, dosya saklama, e-posta</td><td><span class="tag w">Paket var, bağlı değil</span></td><td>Yerel pakette duruyor; S3 uyumlu sağlayıcı yok</td></tr>
+            <tr><td>Birim (organizasyon) yapısı</td><td><span class="tag w">Tablo var, kullanılmıyor</span></td><td>Servis, ekran ve sorgu filtresi yazılacak</td></tr>
+            <tr><td>Diyagram, PDF görüntüleyici, QR, yükleyici</td><td><span class="tag w">Yalnız demoda</span></td><td>Gerçek ekranlarda yalnızca grid kullanılıyor</td></tr>
+            <tr><td>İş akışı, dinamik form, belge üretimi, ödeme, SMS</td><td><span class="tag b">Yok</span></td><td>MEÇEB'in yazacağı çekirdek</td></tr>
+            <tr><td>CQRS / MediatR, Onion mimarisi</td><td><span class="tag b">Yok</span></td><td>Eklenmesi önerilmiyor</td></tr>
+        </table></div>
+        <p class="small">README dosyaları .NET 10, FluentValidation, Hangfire, 2FA ve token yenilemeden söz ediyor; kodda bunlar yok. Uygulama çalıştırılmadı, kod okunarak incelendi.</p>
+    </div>
+</section>
+
+<section>
+    <h2>Kaynaklar ne söylüyor</h2>
+    <div class="body">
+        <div class="facts">
+            <div class="fact"><b>11</b><span>uygulama</span></div>
+            <div class="fact"><b>16</b><span>belge satırı</span></div>
+            <div class="fact"><b>48</b><span>açık soru</span></div>
+            <div class="fact"><b>10</b><span>kaynak çelişkisi</span></div>
+        </div>
+        <ul>
+            <li>Belgeler çıktı (belge, üst yazı, hiç), süre (1, 4, 5 yıl, süresiz), ödeme, e-imza ve onay makamı bakımından farklılaşıyor. Platform bu değişkenliği tanımla karşılamalı.</li>
+            <li>Kapsam dokümanı hibrit bir yapı tarif ediyor: bazı süreçlerde teknik form ve inceleme alt uygulamada kalıyor, MEÇEB başvuru, ödeme, imza ve durum takibini üstleniyor.</li>
+            <li>Resmî sayılı, QR kodlu ve imzalı belge Belgenet'te üretiliyor. MEÇEB taslağı hazırlıyor ve sonucu arşivliyor.</li>
+            <li>Excel'de dört sütun 16 satırın çoğunda boş. Hiçbiri varsayımla doldurulmadı.</li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <h2>Önerilen mimari</h2>
+    <div class="body">
+        <p>Mevcut katmanlar içinde modüler monolit. Yöneticinin tanımladığı her şey sürümlüdür ve yayınlandıktan sonra değişmez; başvuru başladığı sürümle tamamlanır.</p>
+        <div class="diagram"><pre class="mermaid">
+flowchart TB
+    subgraph T[Tanım - yönetici]
+        CAT[Katalog]
+        FRM[Form]
+        WFD[İş akışı tanımı]
+        TPL[Şablon]
+        FEE[Ücret]
+    end
+    subgraph C[Çalışma zamanı]
+        APL[Başvuru]
+        WFE[İş akışı motoru]
+        PAY[Ödeme]
+        GEN[Belge üretimi]
+        DOC[Belge yaşam döngüsü]
+    end
+    subgraph O[Ortak]
+        PTY[Taraflar]
+        ORG[Birim ve kapsam]
+        FIL[Dosya]
+        INT[Entegrasyon]
+        NTF[Bildirim]
+    end
+    CAT --> FRM & WFD & TPL & FEE
+    APL --> CAT & PTY & FIL
+    APL --> WFE
+    WFE --> ORG & PAY & GEN
+    GEN --> DOC
+    PAY & GEN --> INT
+    WFE & DOC -.-> NTF
+        </pre></div>
+        <div class="scroll"><table>
+            <tr><th>Konu</th><th>Öneri</th><th>Neden</th></tr>
+            <tr><td>Form</td><td>Kompakt JSON şeması, sunucuda doğrulama</td><td>Yeni bağımlılık yok; aynı şema iki tarafta okunur</td></tr>
+            <tr><td>İş akışı</td><td>Durum, geçiş ve görev tabloları</td><td>Kaynaklardaki tüm akışlara yetiyor; BPMN motoru gereksiz karmaşıklık</td></tr>
+            <tr><td>Özel kurallar</td><td>Adıyla seçilen kod genişletme noktaları</td><td>Veritabanında program tutulmaz</td></tr>
+            <tr><td>Yetki</td><td>Mevcut yetkiler + her erişimde birim ve taraf kapsamı</td><td>Başkasının kaydına erişimi engeller</td></tr>
+            <tr><td>Entegrasyon</td><td>Port, adapter, giden kutusu, tekrar deneme</td><td>Dış sistem kesintisinde veri tutarlı kalır</td></tr>
+            <tr><td>Belge</td><td>Şablon sürümü + veri anlık görüntüsü + özet değeri</td><td>Üretilen belge değişmez, kanıt değeri korunur</td></tr>
+            <tr><td>İz kaydı</td><td>Yalnızca eklenen işlem geçmişi</td><td>Kim, ne zaman, neyi, hangi gerekçeyle</td></tr>
+        </table></div>
+    </div>
+</section>
+
+<section>
+    <h2>Onay bekleyen kararlar</h2>
+    <div class="body">
+        <div class="scroll"><table>
+            <tr><th>No</th><th>Karar</th><th>Öneri</th></tr>
+            <tr><td>K-1</td><td>Mimari stil</td><td>Mevcut katmanlarda modüler monolit</td></tr>
+            <tr><td>K-2</td><td>Form tanımı</td><td>Kendi JSON şeması ve renderer</td></tr>
+            <tr><td>K-3</td><td>İş akışı</td><td>Durum/geçiş tabloları, görsel önizleme</td></tr>
+            <tr><td>K-5</td><td>İşletim modları</td><td>Yerel, hibrit ve izleme</td></tr>
+            <tr><td>K-7</td><td>Resmî belge</td><td>Sayı, QR ve imza Belgenet'te</td></tr>
+            <tr><td>K-8</td><td>Kiracılık</td><td>Tek kiracı</td></tr>
+            <tr><td>K-9</td><td>Alt uygulamaya yönlendirme</td><td>Tek kullanımlık devir kodu; URL'de kimlik no taşınmaz</td></tr>
+            <tr><td>K-10</td><td>Oturum</td><td>Kısa ömürlü token, yenileme ve iptal</td></tr>
+            <tr><td>K-13</td><td>Arka plan işleri</td><td>Yerel paketteki Hangfire</td></tr>
+        </table></div>
+        <p class="small">Tam liste (14 karar) ve alternatifleri hedef mimari dokümanının son bölümünde.</p>
+    </div>
+</section>
+
+<section>
+    <h2>Yol haritası</h2>
+    <div class="body">
+        <div class="phases">
+            <div class="phase"><h3>Faz 0 · Hazırlık</h3><p>Proje adlandırma, güvenlik açıkları, arka plan işi ve dosya altyapısı.</p></div>
+            <div class="phase"><h3>Faz 1 · Çekirdek</h3><p>Taraflar, birim ve kapsam, katalog, form, iş akışı, başvuru.</p></div>
+            <div class="phase"><h3>Faz 2 · Pilot</h3><p>Çevre Yetkilendirme'nin ilk belgesi; ödeme ve Belgenet ile uçtan uca.</p></div>
+            <div class="phase"><h3>Faz 3 · Pilot tamamlama</h3><p>İkinci ve üçüncü belge yalnızca yönetim ekranından; yaşam döngüsü, bildirim, rapor.</p></div>
+            <div class="phase"><h3>Faz 4 · Yerel türler</h3><p>Kişi belgeleri, dış ön koşul sorguları, çıktısız sonuç.</p></div>
+            <div class="phase"><h3>Faz 5 · Hibrit</h3><p>Sıfır Atık, İthalat, E-İzin, ÇED; paralel imza.</p></div>
+        </div>
+        <p>Pilotun başarı ölçütü: ikinci ve üçüncü belge türü backend'e kod eklenmeden tanımlanıp yayınlanır.</p>
+        <p class="small">Süre tahmini verilmedi. Ekip büyüklüğü, pilotun içeriği ve üç kritik entegrasyonun sözleşmesi bilinmeden yapılacak tahmin yanıltıcı olur.</p>
+    </div>
+</section>
+
+<section>
+    <h2>Yanıt bekleyenler</h2>
+    <div class="body">
+        <div class="scroll"><table>
+            <tr><th>Muhatap</th><th>Soru</th></tr>
+            <tr><td>Çevre Yetkilendirme Şubesi</td><td>Form alanları ve ekler, e-imza, onay makamı, ücretler, yenileme ve iptal koşulları</td></tr>
+            <tr><td>Belgenet ekibi</td><td>Taslak gönderme ve sonuç alma servisleri; onay MEÇEB'de mi Belgenet'te mi yürüyecek</td></tr>
+            <tr><td>Döner Sermaye</td><td>Referans numarası, ödeme sonucu bildirimi, iade</td></tr>
+            <tr><td>UÇBS ekibi</td><td>Kullanıcı tipi, yetkili olunan firma ve tesis listesi, birim ağacı servisleri</td></tr>
+            <tr><td>Proje yönetimi</td><td>Hangi belge hangi modda çalışacak; kalıcı arşiv nerede; mevcut belgeler aktarılacak mı</td></tr>
+            <tr><td>BT altyapı</td><td>Nesne deposu, antivirüs, SMS ve e-posta servisleri</td></tr>
+        </table></div>
+    </div>
+</section>
+</div>
+
+<!--claude-mermaid-runtime-begin:3477-->
+<style>.mermaid-diagram{margin-block:4px}.mermaid-diagram svg{display:block;margin:0 auto;max-width:100%;height:auto}</style>
+<script src="/_runtime/mermaid-11.16.1.min.js"></script>
+<script>(function(){
+var CFG={"palettes":{"light":{"surface":"#f4efe4","text":"#42392e","line":"#8a7f6d","border":"#7a6c52","bg":"#fffdf8"},"dark":{"surface":"#262b34","text":"#f2f3f5","line":"#a8adb8","border":"#9aa4b8","bg":"#1f232b"}}};
+if(typeof mermaid==='undefined')return;
+var pres=Array.prototype.slice.call(document.querySelectorAll('pre.mermaid')).filter(function(p){if(p.hasAttribute('data-claude-mermaid-claimed'))return false;p.setAttribute('data-claude-mermaid-claimed','1');return true;});
+if(!pres.length)return;
+var mq=window.matchMedia?window.matchMedia('(prefers-color-scheme: dark)'):null;
+var root=document.documentElement;
+var items=pres.map(function(pre){
+var mount=document.createElement('div');mount.className='mermaid-diagram';
+return {pre:pre,mount:mount,src:pre.textContent||''};
+});
+var seq=0;
+var renderGen=0;
+var lastKey='';
+function pageBg(fallback){
+var els=[document.body,document.documentElement];
+for(var i=0;i<els.length;i++){
+var c=els[i]&&getComputedStyle(els[i]).backgroundColor;
+if(c&&c!=='transparent'&&c!=='rgba(0, 0, 0, 0)')return c;
+}
+return fallback;
+}
+function render(){
+var theme=root.getAttribute('data-theme');
+var dark=theme==='dark'||(!!(mq&&mq.matches)&&theme!=='light');
+var pal=dark?CFG.palettes.dark:CFG.palettes.light;
+var bg=pageBg(pal.bg);
+var key=(dark?'d':'l')+'|'+bg;
+if(key===lastKey)return;
+lastKey=key;
+var gen=++renderGen;
+var font=getComputedStyle(document.body).fontFamily||'sans-serif';
+var nat={useMaxWidth:false};
+mermaid.initialize({
+startOnLoad:false,securityLevel:'strict',theme:'base',
+flowchart:nat,sequence:nat,er:nat,state:nat,class:nat,pie:nat,
+gantt:nat,journey:nat,timeline:nat,gitGraph:nat,mindmap:nat,xyChart:nat,
+quadrantChart:nat,sankey:nat,c4:nat,requirement:nat,block:nat,
+packet:nat,kanban:nat,architecture:nat,radar:nat,
+themeVariables:{background:bg,mainBkg:pal.surface,primaryColor:pal.surface,
+primaryTextColor:pal.text,lineColor:pal.line,primaryBorderColor:pal.border,
+nodeBorder:pal.border,clusterBorder:pal.border,edgeLabelBackground:bg,
+clusterBkg:'rgba(127,127,127,0.07)',titleColor:pal.text,
+darkMode:dark,rowOdd:bg,rowEven:'rgba(127,127,127,0.07)',
+attributeBackgroundColorOdd:bg,attributeBackgroundColorEven:'rgba(127,127,127,0.07)',
+fontSize:'16px',fontFamily:font},
+themeCSS:'.node rect, .node circle, .node polygon, .node path, .cluster rect { stroke-width: 2px; }'
+});
+items.forEach(function(it){
+var id='claude-mermaid-'+seq++;
+mermaid.render(id,it.src).then(function(r){
+if(gen!==renderGen)return;
+var prev=it.pre.previousElementSibling;
+if(prev&&prev.className==='mermaid-diagram'&&prev!==it.mount)return;
+it.mount.innerHTML=r.svg;
+if(!it.mount.parentNode)it.pre.parentNode.insertBefore(it.mount,it.pre);
+it.pre.style.display='none';
+},function(){
+var scratch=document.getElementById(id);
+if(scratch)scratch.parentNode.removeChild(scratch);
+scratch=document.getElementById('d'+id);
+if(scratch)scratch.parentNode.removeChild(scratch);
+if(gen!==renderGen)return;
+if(it.mount.parentNode)it.mount.parentNode.removeChild(it.mount);
+it.pre.style.display='';
+});
+});
+}
+render();
+if(mq&&mq.addEventListener)mq.addEventListener('change',render);
+if(typeof MutationObserver!=='undefined')new MutationObserver(render).observe(root,{attributes:true,attributeFilter:['data-theme']});
+})();</script>
+<!--claude-mermaid-runtime-end-->
+
+</body></html>

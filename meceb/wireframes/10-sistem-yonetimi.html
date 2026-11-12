@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MEÇEB · Sistem yönetimi</title>
+<link rel="stylesheet" href="wf.css">
+</head>
+<body>
+<div class="note">Wireframe · belge türü tanım ekranı; değerler örnektir · <a href="index.html">dizin</a></div>
+<div class="shell">
+    <nav class="side">
+        <div class="brand">MEÇEB</div>
+        <a href="01-dashboard.html">Ana sayfa</a>
+        <div class="group">TANIMLAR</div>
+        <a class="on" href="10-sistem-yonetimi.html">Belge türleri</a>
+        <a href="#">Formlar</a>
+        <a href="06-is-akisi-tasarim.html">İş akışları</a>
+        <a href="#">Şablonlar</a>
+        <a href="#">Ücret tarifesi</a>
+        <a href="#">Bildirim kuralları</a>
+        <a href="#">Kod listeleri</a>
+        <div class="group">SİSTEM</div>
+        <a href="#">Birimler</a>
+        <a href="#">Kullanıcılar ve roller</a>
+        <a href="#">Entegrasyonlar</a>
+        <a href="#">Sistem parametreleri</a>
+        <a href="#">Denetim kayıtları</a>
+    </nav>
+    <div class="main">
+        <div class="top">
+            <div>
+                <p class="small muted" style="margin:0"><a href="#">Belge türleri</a> / Çevre yetkilendirme</p>
+                <h1>Deniz yeterlilik belgesi</h1>
+            </div>
+            <span class="badge warn">v3 · taslak</span><span class="badge ok">yayında: v2</span>
+            <span class="grow"></span>
+            <span class="btn">Önizle (başvuran gözüyle)</span><span class="btn">Kaydet</span><span class="btn pri">Yayınla</span>
+        </div>
+        <div class="content">
+            <div class="card mb">
+                <h2>Yayın kontrol listesi</h2>
+                <div class="row">
+                    <span class="badge ok">✓ Genel</span>
+                    <span class="badge ok">✓ Başvuru sahibi</span>
+                    <span class="badge ok">✓ Form</span>
+                    <span class="badge ok">✓ İş akışı</span>
+                    <span class="badge warn">! Şablon: iptal üst yazısı eksik</span>
+                    <span class="badge ok">✓ Ücret</span>
+                    <span class="badge ok">✓ Bildirim</span>
+                </div>
+                <p class="small muted mt">Yayınlanan sürüm değiştirilemez. Açık başvurular başladıkları sürümle tamamlanır; yeni başvurular v3 ile açılır.</p>
+            </div>
+            <div class="grid g21">
+                <div class="card">
+                    <div class="tabs"><span class="on">Genel</span><span>Başvuru sahibi ve koşullar</span><span>Form</span><span>İş akışı</span><span>Şablonlar</span><span>Ücret</span><span>Yaşam döngüsü</span><span>Bildirimler</span><span>Entegrasyon</span></div>
+                    <div class="grid g2">
+                        <div class="field"><label>Belge adı *</label><div class="in">Deniz yeterlilik belgesi</div></div>
+                        <div class="field"><label>Kod *</label><div class="in ro">CY-DENIZ</div></div>
+                        <div class="field"><label>Kategori *</label><div class="in">Çevre yetkilendirme ▾</div></div>
+                        <div class="field"><label>Belgeyi veren birim *</label><div class="in">Çevre Yetkilendirme Şubesi ▾</div></div>
+                        <div class="field"><label>İşletim modu</label><div class="in">Yerel (tümü MEÇEB'de) ▾</div></div>
+                        <div class="field"><label>Durum</label><div class="in">◉ Aktif &nbsp; ○ Pasif</div></div>
+                    </div>
+                    <h2 class="mt">Başvuru sahibi ve koşullar</h2>
+                    <div class="grid g2">
+                        <div class="field"><label>Belge kimin adına düzenlenir?</label><div class="in">☑ Tesis &nbsp; ☐ Firma &nbsp; ☐ Kişi</div></div>
+                        <div class="field"><label>Aynı anda birden fazla başvuru</label><div class="in">○ Evet &nbsp; ◉ Hayır</div></div>
+                    </div>
+                    <div class="field">
+                        <label>Uygunluk kontrolleri <span class="muted">(kayıtlı kontrollerden seçilir)</span></label>
+                        <table>
+                            <tr><th>Kontrol</th><th>Parametre</th><th>Sistem erişilemezse</th><th></th></tr>
+                            <tr><td>Aktif belge yok</td><td>—</td><td>—</td><td><span class="btn sm bad">Kaldır</span></td></tr>
+                            <tr><td>Tesis UÇBS'de kayıtlı</td><td>—</td><td>Engelle ▾</td><td><span class="btn sm bad">Kaldır</span></td></tr>
+                        </table>
+                        <div class="row mt"><span class="btn sm">+ Kontrol ekle</span></div>
+                    </div>
+                    <h2 class="mt">Geçerlilik ve yenileme</h2>
+                    <div class="grid g3">
+                        <div class="field"><label>Geçerlilik süresi</label><div class="in">◉ Süreli: 4 yıl &nbsp; ○ Süresiz</div></div>
+                        <div class="field"><label>Yenileme penceresi</label><div class="in">Bitişe 180 gün kala</div></div>
+                        <div class="field"><label>Hatırlatma günleri</label><div class="in">180, 90, 30, 7</div></div>
+                    </div>
+                    <div class="field"><label>İzin verilen belge işlemleri</label><div class="in">☑ Yenileme &nbsp; ☑ Bilgi güncelleme &nbsp; ☑ Askıya alma &nbsp; ☑ İptal &nbsp; ☐ Sahip değişikliği &nbsp; ☐ Uzatma</div></div>
+                    <div class="field"><label>Takip numarası kalıbı</label><div class="in">CY-B-{YIL}-{SIRA:4}</div></div>
+                </div>
+                <div>
+                    <div class="card mb">
+                        <h2>Bu sürümde kullanılanlar</h2>
+                        <dl class="kv">
+                            <dt>Form</dt><dd><a href="04-dinamik-form.html">Deniz yeterlilik başvuru formu v4</a></dd>
+                            <dt>İş akışı</dt><dd><a href="06-is-akisi-tasarim.html">Çevre yetkilendirme standart akışı v3</a></dd>
+                            <dt>Şablonlar</dt><dd>Üst yazı v2 · Askı üst yazısı v1</dd>
+                            <dt>Ücret</dt><dd>Kalem 00.00.00 · yeni / yenileme</dd>
+                        </dl>
+                    </div>
+                    <div class="card mb">
+                        <h2>Sürüm geçmişi</h2>
+                        <table>
+                            <tr><th>Sürüm</th><th>Durum</th><th>Açık başvuru</th></tr>
+                            <tr><td>v3</td><td><span class="badge warn">Taslak</span></td><td>—</td></tr>
+                            <tr><td>v2</td><td><span class="badge ok">Yayında</span></td><td>6</td></tr>
+                            <tr><td>v1</td><td><span class="badge">Kullanımdan kalktı</span></td><td>1</td></tr>
+                        </table>
+                    </div>
+                    <div class="card">
+                        <h2>Değişiklik kaydı</h2>
+                        <p class="small">10.11 · D. Aksoy · Yenileme penceresi 90 → 180 gün</p>
+                        <p class="small">08.11 · D. Aksoy · v3 taslağı oluşturuldu</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

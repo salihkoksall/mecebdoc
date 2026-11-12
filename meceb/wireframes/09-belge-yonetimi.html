@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MEÇEB · Belge yönetimi</title>
+<link rel="stylesheet" href="wf.css">
+</head>
+<body>
+<div class="note">Wireframe · liste mevcut FSearchBase + server-side grid kalıbıyla; kullanıcının kapsamındaki belgeler · <a href="index.html">dizin</a></div>
+<div class="shell">
+    <nav class="side">
+        <div class="brand">MEÇEB</div>
+        <a href="01-dashboard.html">Ana sayfa</a>
+        <div class="group">İŞLERİM</div>
+        <a href="07-degerlendirme.html">İş listem</a>
+        <a href="#">Birim başvuruları</a>
+        <div class="group">BELGELER</div>
+        <a class="on" href="09-belge-yonetimi.html">Belge yönetimi</a>
+        <a href="#">Raporlar</a>
+    </nav>
+    <div class="main">
+        <div class="top">
+            <h1>Belge yönetimi</h1><span class="grow"></span>
+            <span class="btn">Dışa aktar</span>
+        </div>
+        <div class="content">
+            <div class="card mb">
+                <div class="row">
+                    <span class="in" style="min-width:220px">Belge no / sahibi ara…</span>
+                    <span class="in">Belge türü: Tümü ▾</span>
+                    <span class="in">Durum: Aktif, Askıda ▾</span>
+                    <span class="in">Bitiş: 90 gün içinde ▾</span>
+                    <span class="in">Birim: Çevre Yetkilendirme Şubesi ▾</span>
+                    <span class="btn sm">Temizle</span>
+                </div>
+            </div>
+            <div class="grid g21">
+                <div class="card">
+                    <div class="tablewrap"><table>
+                        <tr><th>Belge no</th><th>Belge türü</th><th>Sahibi</th><th>Durum</th><th>Düzenleme</th><th>Bitiş</th><th>Sürüm</th></tr>
+                        <tr class="sel"><td><a href="08-belge-detay.html">CY-B-2021-0031</a></td><td>Araç takip servis sağlayıcı</td><td>Örnek Bilişim A.Ş.</td><td><span class="badge ok">Aktif</span></td><td>30.11.2021</td><td><span class="badge warn">30.11.2026</span></td><td>1</td></tr>
+                        <tr><td><a href="#">CY-B-2022-0007</a></td><td>Deniz yeterlilik</td><td>Örnek Denizcilik Ltd.</td><td><span class="badge ok">Aktif</span></td><td>26.01.2023</td><td>26.01.2027</td><td>2</td></tr>
+                        <tr><td><a href="#">CY-B-2023-0044</a></td><td>Toprak kirliliği kontrolü</td><td>Örnek Çevre Lab.</td><td><span class="badge warn">Askıda</span></td><td>02.05.2023</td><td>02.05.2028</td><td>1</td></tr>
+                        <tr><td><a href="#">CY-B-2020-0019</a></td><td>Araç takip servis sağlayıcı</td><td>Örnek Takip A.Ş.</td><td><span class="badge">Süresi doldu</span></td><td>11.02.2020</td><td>11.02.2025</td><td>1</td></tr>
+                        <tr><td><a href="#">CY-B-2022-0052</a></td><td>Deniz yeterlilik</td><td>Örnek Liman İşl.</td><td><span class="badge bad">İptal</span></td><td>19.09.2022</td><td>—</td><td>1</td></tr>
+                    </table></div>
+                    <div class="row sp mt"><span class="small muted">1–5 / 412</span><span class="small muted">‹ 1 2 3 … 83 ›</span></div>
+                </div>
+                <div class="card">
+                    <h2>CY-B-2021-0031</h2>
+                    <p class="small muted">Araç takip servis sağlayıcılarının yeterlik belgesi · Örnek Bilişim A.Ş.</p>
+                    <dl class="kv mt">
+                        <dt>Durum</dt><dd><span class="badge ok">Aktif</span></dd>
+                        <dt>Geçerlilik</dt><dd>30.11.2021 – 30.11.2026</dd>
+                        <dt>Yenileme</dt><dd>Başvuru yok</dd>
+                    </dl>
+                    <h2 class="mt">İşlemler</h2>
+                    <p class="small muted">Yalnızca bu belge türü için izin verilen geçişler ve kullanıcının yetkisi olanlar görünür.</p>
+                    <div class="row mb">
+                        <span class="btn">Askıya al</span>
+                        <span class="btn bad">İptal et</span>
+                        <span class="btn">Süreyi düzelt</span>
+                        <span class="btn">Yeniden düzenle</span>
+                    </div>
+                    <div class="card" style="background:var(--bg)">
+                        <h3>Askıya alma</h3>
+                        <div class="field"><label>Gerekçe *</label><div class="in area"></div></div>
+                        <div class="field"><label>Dayanak belge</label><div class="drop">Denetim tutanağı vb.</div></div>
+                        <p class="small muted">Onay sonrası askı üst yazısı üretilir ve Belgenet imza akışına gönderilir. Belge sahibine bildirim gider.</p>
+                        <div class="row"><span class="btn sm">Vazgeç</span><span class="btn pri sm">Onaya gönder</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
